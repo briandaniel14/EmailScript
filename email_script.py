@@ -80,13 +80,12 @@ to_emails = [
 smtp_server='mail.privateemail.com'
 smtp_port=587
 username='brian@edinburghai.org'
-password='crk-txh5yvq-fah2BYT'
+password=secrets.password
 attachments = [r"C:\Users\brian\Downloads\EdinburghAISponsorDeckv4min.pdf"]
 
 if __name__ == '__main__':
-    #send_email(subject, body, to_emails, smtp_server, smtp_port, username, password, attachments)
-    with open(r"C:\Users\brian\OneDrive\Work\CodingProjects\EdinburghAIEmailSender\sent_emails.txt", "w") as log:
-        log.write('balls')
+    send_email(subject, body, to_emails, smtp_server, smtp_port, username, password, attachments)
+    with open(r"C:\Users\brian\OneDrive\Work\CodingProjects\EdinburghAIEmailSender\sent_emails.txt", "a") as log:
         log.write("\n".join(to_emails) + "\n")
 
     
